@@ -1,0 +1,109 @@
+% Website-specific resume derived from master.tex and linkedin_general.tex
+% Verified content only; phone number intentionally omitted
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[left=0.55in,right=0.55in,top=0.32in,bottom=0.32in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\raggedright
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-5pt}\rule{\textwidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\newcommand{\entry}[4]{
+  \begin{tabularx}{\textwidth}{Xr}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}\vspace{-3pt}
+}
+
+\newcommand{\project}[3]{
+  \begin{tabularx}{\textwidth}{Xr}
+    \textbf{#1} $|$ \textit{#2} & #3
+  \end{tabularx}\vspace{-3pt}
+}
+
+\newenvironment{tightitems}{
+  \begin{itemize}[leftmargin=0.18in, topsep=2pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+}{
+  \end{itemize}\vspace{-2pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\textbf{Mithun Karthikeyan}}\\[3pt]
+  \href{mailto:mithunkar2004@gmail.com}{mithunkar2004@gmail.com}
+  $|$ \href{https://linkedin.com/in/mithunkarth}{linkedin.com/in/mithunkarth}
+  $|$ \href{https://github.com/mithunkar}{github.com/mithunkar}
+  $|$ Portland, OR
+\end{center}
+\vspace{-10pt}
+
+\section{Education}
+\entry{Oregon State University}{Corvallis, OR}{M.S. in Artificial Intelligence}{Sept. 2025 - June 2026}
+\entry{Oregon State University}{Corvallis, OR}{B.S. in Computer Science, Data Science Option; GPA: 4.0}{Sept. 2022 - June 2025}
+
+\section{Technical Skills}
+\textbf{Languages:} Python, C, C++, Java, JavaScript/TypeScript, SQL, R, HTML/CSS \\
+\textbf{AI and Data:} PyTorch, Scikit-learn, NumPy, SciPy, Pandas, ChromaDB, RAG, ETL pipelines \\
+\textbf{Product and Cloud:} React, Node.js, FastAPI, Flask, AWS S3/EC2/DynamoDB, BeautifulSoup, boto3 \\
+\textbf{Systems and Research:} Linux/Unix, Git, CI workflows, automated testing, HPC, OpenMP, CUDA, NMR software
+
+\section{Experience}
+\entry{Graduate Teaching Assistant}{Sept. 2025 - June 2026}{Oregon State University}{Corvallis, OR}
+\begin{tightitems}
+  \item Supported operating systems, open-source software, and capstone courses through mentoring, grading, office hours, and technical feedback.
+  \item Guided students on xv6 kernel labs, low-level C, Git collaboration, automated testing, CI, and full-cycle capstone delivery.
+\end{tightitems}
+
+\entry{Research Assistant}{Sept. 2023 - June 2026}{Osborn Popp Lab, Oregon State University}{Corvallis, OR}
+\begin{tightitems}
+  \item Developed open-source Python tools for NMR spectra visualization, CODEX simulation, curve fitting, and reusable lab data workflows.
+  \item Built NMR Plotter for publication-quality figures and co-authored publications in three peer-reviewed scientific journals.
+\end{tightitems}
+
+\entry{Web Development Intern}{June 2023 - Sept. 2023}{RUSD Solutions}{Remote}
+\begin{tightitems}
+  \item Contributed to e-commerce deployment, WordPress plugin troubleshooting, and Adobe Acrobat workflow automation.
+\end{tightitems}
+
+\section{Projects}
+\project{SmartTap}{Python, FastAPI, React, TypeScript, Pandas}{2026}
+\begin{tightitems}
+  \item Built a natural-language evidence system for Oregon agriculture and weather data with deterministic validation and CLI, API, and web delivery.
+\end{tightitems}
+
+\project{Mocki - BeaverHacks NVIDIA 1st Place}{React, TypeScript, Nemotron}{Apr. 2025}
+\begin{tightitems}
+  \item Built a voice-enabled AI mock interview platform with role-specific interviews, multi-agent orchestration, and structured feedback.
+\end{tightitems}
+
+\project{LLM Agents at the Edge - HP Capstone}{Python, AWS, ChromaDB, RAG}{Sept. 2024 - June 2025}
+\begin{tightitems}
+  \item Built an HP-sponsored RAG chatbot for Oregon State Engineering and led its ETL, AWS, and vector-retrieval infrastructure.
+\end{tightitems}
+
+\project{NMR Plotter}{Python, Matplotlib, Tkinter}{Jan. 2024 - Apr. 2025}
+\begin{tightitems}
+  \item Developed and published an open-source GUI for NMR visualization and publication-quality figure generation.
+\end{tightitems}
+
+\section{Publications}
+\begin{tightitems}
+  \item \textbf{Metallized, 3D-printed radiofrequency coils.} \textit{Journal of Magnetic Resonance}, 2026. DOI: \href{https://doi.org/10.1016/j.jmr.2026.108057}{10.1016/j.jmr.2026.108057}
+  \item \textbf{NMR\_Plotter: A Python GUI for Generating Figures from NMR Spectra.} \textit{Journal of Open Research Software}, 2025. DOI: \href{https://doi.org/10.5334/jors.617}{10.5334/jors.617}
+  \item \textbf{Measurement of phospholipid lateral diffusion at high pressure by in situ magic-angle spinning NMR spectroscopy.} \textit{Communications Chemistry}, 2025. DOI: \href{https://doi.org/10.1038/s42004-025-01449-7}{10.1038/s42004-025-01449-7}
+\end{tightitems}
+
+\end{document}

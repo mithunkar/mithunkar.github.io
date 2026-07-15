@@ -1,0 +1,306 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  experiences,
+  navigation,
+  projects,
+  skillGroups,
+  socialLinks,
+} from "../data/portfolio";
+
+const featuredProjects = projects.filter((project) => project.featured);
+const secondaryProjects = projects.filter((project) => !project.featured);
+const siteTitle = "Mithun Karthikeyan - AI & Software Engineer";
+const siteDescription =
+  "Portfolio of Mithun Karthikeyan, an AI and software engineer building reliable AI systems, research tools, and full-stack products.";
+---
+
+<Layout title={siteTitle} description={siteDescription}>
+  <header class="site-header" data-header>
+    <div class="header-inner container">
+      <a class="wordmark" href="#home" aria-label="Mithun Karthikeyan, back to home">MK</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-label">Menu</span>
+        <span class="menu-mark" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+        <ol>
+          {navigation.map((item, index) => (
+            <li>
+              <a href={item.href}>
+                <span class="nav-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero section-pad" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-kicker reveal">
+          <span class="eyebrow">AI / SOFTWARE / RESEARCH</span>
+          <span class="location">Portland, Oregon</span>
+        </div>
+
+        <div class="hero-copy reveal">
+          <h1 id="hero-title">
+            Mithun Karthikeyan<br />
+            <span>AI &amp; Software Engineer</span>
+          </h1>
+          <p class="hero-deck">
+            I build reliable AI systems, research tools, and full-stack products that turn complex information into useful, inspectable experiences.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projects">View projects</a>
+            <a class="button button-light" href="/Mithun_Karthikeyan_Resume.pdf" download>Download resume</a>
+          </div>
+        </div>
+
+        <dl class="hero-facts reveal" aria-label="Highlights">
+          <div>
+            <dt>2026</dt>
+            <dd>M.S. Artificial Intelligence</dd>
+          </div>
+          <div>
+            <dt>4.0</dt>
+            <dd>B.S. Computer Science GPA</dd>
+          </div>
+          <div>
+            <dt>03</dt>
+            <dd>Peer-reviewed publications</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="about" class="section section-pad" aria-labelledby="about-title">
+      <div class="container section-grid">
+        <header class="section-heading reveal">
+          <p class="section-number">01 / About</p>
+          <h2 id="about-title">Engineering grounded in evidence.</h2>
+        </header>
+
+        <div class="about-copy reveal">
+          <p class="lead">
+            I am an AI and software engineer with experience spanning machine learning, systems programming, scientific computing, cloud infrastructure, and product development.
+          </p>
+          <p>
+            My work moves between research and production: from peer-reviewed NMR software and computational analysis to RAG pipelines, data-backed applications, and agentic AI experiences. I care about systems that are not only capable, but understandable, testable, and useful to the people relying on them.
+          </p>
+          <div class="education-block">
+            <article>
+              <span class="meta">Oregon State University / 2026</span>
+              <h3>Master of Science, Artificial Intelligence</h3>
+            </article>
+            <article>
+              <span class="meta">Oregon State University / 2025</span>
+              <h3>Bachelor of Science, Computer Science - Data Science</h3>
+              <p>Graduated with a 4.0 GPA.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="skills-grid reveal" aria-label="Technical skills">
+          {skillGroups.map((group) => (
+            <div class="skill-group">
+              <h3>{group.label}</h3>
+              <ul>
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-pad" aria-labelledby="experience-title">
+      <div class="container section-grid">
+        <header class="section-heading reveal">
+          <p class="section-number">02 / Experience</p>
+          <h2 id="experience-title">Teaching, research, and delivery.</h2>
+        </header>
+
+        <div class="experience-list">
+          {experiences.map((experience, index) => (
+            <article class="experience-item reveal">
+              <div class="experience-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
+              <div class="experience-title">
+                <span class="meta">{experience.period}</span>
+                <h3>{experience.role}</h3>
+                <p>{experience.organization}</p>
+                <span class="location-line">{experience.location}</span>
+              </div>
+              <div class="experience-body">
+                <p class="experience-summary">{experience.summary}</p>
+                <ul>
+                  {experience.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+
+                {experience.publications && (
+                  <div class="publication-block">
+                    <p class="meta">Selected publications</p>
+                    <ol>
+                      {experience.publications.map((publication) => (
+                        <li>
+                          <a href={publication.href} target="_blank" rel="noreferrer">
+                            <span>{publication.label}</span>
+                            <small>{publication.journal}, {publication.year}</small>
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-pad" aria-labelledby="projects-title">
+      <div class="container section-grid">
+        <header class="section-heading reveal">
+          <p class="section-number">03 / Projects</p>
+          <h2 id="projects-title">Selected systems and tools.</h2>
+        </header>
+
+        <div class="featured-projects">
+          {featuredProjects.map((project, index) => (
+            <article class="project-card reveal">
+              <div class="project-media">
+                {project.image && (
+                  <img src={project.image} alt={project.title + " project image placeholder"} loading="lazy" width="1600" height="900" />
+                )}
+                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <div class="project-info">
+                <div class="project-heading">
+                  <span class="meta">{project.period}</span>
+                  <h3>{project.title}</h3>
+                </div>
+                <p>{project.summary}</p>
+                <ul class="tag-list" aria-label={project.title + " technologies"}>
+                  {project.technologies.map((technology) => <li>{technology}</li>)}
+                </ul>
+                {project.links && (
+                  <div class="project-links">
+                    {project.links.map((link) => (
+                      <a href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="more-projects reveal">
+          <div class="more-heading">
+            <p class="section-number">More work</p>
+            <p>Additional experiments in machine learning, product development, scientific computing, and systems.</p>
+          </div>
+          <div class="project-table">
+            {secondaryProjects.map((project, index) => (
+              <article>
+                <span class="table-index" aria-hidden="true">{String(index + 5).padStart(2, "0")}</span>
+                <div>
+                  <h3>{project.title}</h3>
+                  <p>{project.summary}</p>
+                </div>
+                <ul class="tag-list compact" aria-label={project.title + " technologies"}>
+                  {project.technologies.map((technology) => <li>{technology}</li>)}
+                </ul>
+                <span class="meta project-period">{project.period}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-pad" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <header class="contact-copy reveal">
+          <p class="section-number">04 / Contact</p>
+          <h2 id="contact-title">Let's build something thoughtful.</h2>
+          <p>I am always interested in meaningful engineering, applied AI, and research collaborations.</p>
+          <a class="contact-email" href="mailto:mithunkar2004@gmail.com">mithunkar2004@gmail.com</a>
+        </header>
+
+        <nav class="contact-links reveal" aria-label="Contact links">
+          {socialLinks.map((link, index) => (
+            <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined}>
+              <span class="meta">{String(index + 1).padStart(2, "0")}</span>
+              <strong>{link.label}</strong>
+              <small>{link.note}</small>
+              <span class="external-mark" aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mithun Karthikeyan</p>
+      <p>Designed and built with intention.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-nav");
+
+    const closeMenu = () => {
+      menuButton?.setAttribute("aria-expanded", "false");
+      navigation?.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+    };
+
+    menuButton?.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      navigation?.classList.toggle("is-open", !isOpen);
+      document.body.classList.toggle("menu-open", !isOpen);
+    });
+
+    navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    const header = document.querySelector("[data-header]");
+    const setHeaderState = () => header?.classList.toggle("is-scrolled", window.scrollY > 12);
+    setHeaderState();
+    window.addEventListener("scroll", setHeaderState, { passive: true });
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -48px" },
+      );
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
+</Layout>
