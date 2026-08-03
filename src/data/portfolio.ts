@@ -187,18 +187,20 @@ export const projects: Project[] = [
     period: "Apr 2025",
     summary: "A 24-hour hackathon project that turned classroom attendance into a competitive, geolocation-validated check-in experience.",
     technologies: ["React", "TypeScript", "Node.js", "Geolocation APIs"],
+    image: "/images/projects/roll-call-brawl.png",
     links: [{ label: "View on Devpost", href: "https://devpost.com/software/roll-call-brawl" }],
-    featured: false,
+    featured: true,
   },
   {
     title: "CODEX Decay Curve Fitting GUI",
     period: "Apr 2024 - Sep 2024",
     summary: "An open-source scientific tool for simulating and fitting CODEX decay data used in high-pressure NMR diffusion research.",
     technologies: ["Python", "NumPy", "SciPy", "Data visualization"],
+    image: "/images/projects/codex-decay.png",
     links: [
       { label: "View repository", href: "https://github.com/2top/CODEX_LateralDiffusion_PythonGUI" },
       { label: "Read publication", href: "https://www.nature.com/articles/s42004-025-01449-7#code-availability" },
     ],
-    featured: false,
+    featured: true,
   },
 ];

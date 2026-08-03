@@ -201,34 +201,36 @@ const siteDescription =
           ))}
         </div>
 
-        <div class="more-projects reveal">
-          <div class="more-heading">
-            <p class="section-number">More work</p>
-            <p>Additional experiments in machine learning, product development, scientific computing, and systems.</p>
-          </div>
-          <div class="project-table">
-            {secondaryProjects.map((project, index) => (
-              <article>
-                <span class="table-index" aria-hidden="true">{String(index + 6).padStart(2, "0")}</span>
-                <div>
-                  <h3>{project.title}</h3>
-                  <p>{project.summary}</p>
-                </div>
-                <ul class="tag-list compact" aria-label={project.title + " technologies"}>
-                  {project.technologies.map((technology) => <li>{technology}</li>)}
-                </ul>
-                <span class="meta project-period">{project.period}</span>
-                {project.links && (
-                  <div class="project-links compact-links">
-                    {project.links.map((link) => (
-                      <a href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>
-                    ))}
+        {secondaryProjects.length > 0 && (
+          <div class="more-projects reveal">
+            <div class="more-heading">
+              <p class="section-number">More work</p>
+              <p>Additional experiments in machine learning, product development, scientific computing, and systems.</p>
+            </div>
+            <div class="project-table">
+              {secondaryProjects.map((project, index) => (
+                <article>
+                  <span class="table-index" aria-hidden="true">{String(index + featuredProjects.length + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.summary}</p>
                   </div>
-                )}
-              </article>
-            ))}
+                  <ul class="tag-list compact" aria-label={project.title + " technologies"}>
+                    {project.technologies.map((technology) => <li>{technology}</li>)}
+                  </ul>
+                  <span class="meta project-period">{project.period}</span>
+                  {project.links && (
+                    <div class="project-links compact-links">
+                      {project.links.map((link) => (
+                        <a href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
 
