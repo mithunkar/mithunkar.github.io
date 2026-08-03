@@ -128,15 +128,22 @@ export const projects: Project[] = [
     summary: "A natural-language evidence system that turns questions about Oregon agricultural and weather data into charts, summaries, previews, and inspectable validation artifacts.",
     technologies: ["Python", "FastAPI", "React", "TypeScript", "Pandas"],
     image: "/images/projects/smarttap.png",
-    links: [{ label: "View repository", href: "https://github.com/mithunkar/SmartTap" }],
+    links: [
+      { label: "View repository", href: "https://github.com/mithunkar/SmartTap" },
+      { label: "View presentation", href: "/documents/smarttap-presentation.pdf" },
+    ],
     featured: true,
   },
   {
     title: "Mocki",
     period: "Apr 2025",
-    summary: "A first-place BeaverHacks project that orchestrates a panel of AI agents to run tailored, voice-enabled mock interviews and produce structured feedback.",
+    summary: "A first-place BeaverHacks project, now live as a resume-aware interview practice platform with a rotating AI panel, voice practice, and actionable debriefs.",
     technologies: ["React", "TypeScript", "NVIDIA Nemotron", "Multi-agent systems"],
     image: "/images/projects/mocki.png",
+    links: [
+      { label: "Visit live site", href: "https://mocki.dev" },
+      { label: "View repository", href: "https://github.com/Abhishek21g/Mocki" },
+    ],
     featured: true,
   },
   {
@@ -145,6 +152,10 @@ export const projects: Project[] = [
     summary: "An HP-sponsored RAG system for Oregon State engineering students, backed by a data pipeline, vector retrieval, and scalable AWS infrastructure.",
     technologies: ["Python", "AWS", "ChromaDB", "RAG", "BeautifulSoup"],
     image: "/images/projects/llm-agents.png",
+    links: [
+      { label: "View team repository", href: "https://github.com/OSU-LLM-Agents-ATE/ETL" },
+      { label: "View project poster", href: "/documents/llm-agents-edge-poster.pdf" },
+    ],
     featured: true,
   },
   {
@@ -164,13 +175,19 @@ export const projects: Project[] = [
     period: "2025",
     summary: "A transfer-learning study comparing ResNet-18 and ResNet-50 across fine-tuning and augmentation strategies, reaching 86.2% validation accuracy.",
     technologies: ["PyTorch", "ResNet", "Grad-CAM", "Weights & Biases"],
-    featured: false,
+    image: "/images/projects/dog-emotion.png",
+    links: [
+      { label: "View repository", href: "https://github.com/nguyphu2/Emotion-Detection" },
+      { label: "View presentation", href: "/documents/dog-emotion-detection-presentation.pdf" },
+    ],
+    featured: true,
   },
   {
     title: "Roll Call Brawl",
     period: "Apr 2025",
     summary: "A 24-hour hackathon project that turned classroom attendance into a competitive, geolocation-validated check-in experience.",
     technologies: ["React", "TypeScript", "Node.js", "Geolocation APIs"],
+    links: [{ label: "View on Devpost", href: "https://devpost.com/software/roll-call-brawl" }],
     featured: false,
   },
   {
@@ -178,13 +195,10 @@ export const projects: Project[] = [
     period: "Apr 2024 - Sep 2024",
     summary: "An open-source scientific tool for simulating and fitting CODEX decay data used in high-pressure NMR diffusion research.",
     technologies: ["Python", "NumPy", "SciPy", "Data visualization"],
-    featured: false,
-  },
-  {
-    title: "Small Shell",
-    period: "2024",
-    summary: "A Bash-like shell written in C with parsing, expansion, built-in commands, redirection, background execution, and signal handling.",
-    technologies: ["C", "Linux", "Systems programming", "Signals"],
+    links: [
+      { label: "View repository", href: "https://github.com/2top/CODEX_LateralDiffusion_PythonGUI" },
+      { label: "Read publication", href: "https://www.nature.com/articles/s42004-025-01449-7#code-availability" },
+    ],
     featured: false,
   },
 ];

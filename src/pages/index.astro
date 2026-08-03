@@ -176,7 +176,7 @@ const siteDescription =
             <article class="project-card reveal">
               <div class="project-media">
                 {project.image && (
-                  <img src={project.image} alt={project.title + " project image placeholder"} loading="lazy" width="1600" height="900" />
+                  <img src={project.image} alt={project.title + " project preview"} loading="lazy" width="1600" height="900" />
                 )}
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
               </div>
@@ -209,7 +209,7 @@ const siteDescription =
           <div class="project-table">
             {secondaryProjects.map((project, index) => (
               <article>
-                <span class="table-index" aria-hidden="true">{String(index + 5).padStart(2, "0")}</span>
+                <span class="table-index" aria-hidden="true">{String(index + 6).padStart(2, "0")}</span>
                 <div>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
@@ -218,6 +218,13 @@ const siteDescription =
                   {project.technologies.map((technology) => <li>{technology}</li>)}
                 </ul>
                 <span class="meta project-period">{project.period}</span>
+                {project.links && (
+                  <div class="project-links compact-links">
+                    {project.links.map((link) => (
+                      <a href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>
+                    ))}
+                  </div>
+                )}
               </article>
             ))}
           </div>
