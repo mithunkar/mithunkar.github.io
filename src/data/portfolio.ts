@@ -136,7 +136,7 @@ export const projects: Project[] = [
   },
   {
     title: "Mocki",
-    period: "Apr 2025",
+    period: "Apr 2026",
     summary: "A first-place BeaverHacks project, now live as a resume-aware interview practice platform with a rotating AI panel, voice practice, and actionable debriefs.",
     technologies: ["React", "TypeScript", "NVIDIA Nemotron", "Multi-agent systems"],
     image: "/images/projects/mocki.png",
